@@ -1244,3 +1244,78 @@ textarea {
     animation-iteration-count: 1 !important;
   }
 }
+
+/* ===== Hero dengan ilustrasi ===== */
+
+.hero-illustrated .hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 430px) minmax(0, 1fr);
+  gap: clamp(24px, 5vw, 72px);
+  align-items: center;
+}
+
+.hero-illustrated .hero-copy {
+  background: #141a3a;
+  padding: 40px 38px 42px;
+  border-radius: 24px;
+  box-shadow: 0 30px 70px rgba(20, 26, 90, .35);
+  text-align: left;
+}
+
+.hero-illustrated .hero-copy h1 {
+  color: #fff;
+  margin: 0;
+  line-height: .95;
+  letter-spacing: -.045em;
+}
+
+.hero-illustrated .hero-copy p {
+  margin: 18px 0 28px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #8be8ff;
+  font-weight: 500;
+}
+
+.hero-illustrated .hero-copy .btn {
+  background: #fff;
+  color: #141a3a;
+}
+
+.hero-illustrated .hero-copy .btn:hover {
+  background: #8be8ff;
+}
+
+/* ilustrasi: tepinya memudar ke gradasi */
+.hero-art {
+  background: #bbbcff;
+  padding: clamp(40px, 7vw, 90px);
+  display: grid;
+  place-items: center;
+  -webkit-mask-image:
+    linear-gradient(90deg, transparent, #000 28%, #000 72%, transparent),
+    linear-gradient(180deg, transparent, #000 28%, #000 72%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(90deg, transparent, #000 28%, #000 72%, transparent),
+    linear-gradient(180deg, transparent, #000 28%, #000 72%, transparent);
+  mask-composite: intersect;
+}
+
+.hero-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: contain;
+}
+
+@media (max-width: 860px) {
+  .hero-illustrated .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-art {
+    order: -1;
+  }
+}
